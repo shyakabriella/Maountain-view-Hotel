@@ -1,6 +1,5 @@
 import React from "react";
 import { Outlet, useLocation } from "react-router-dom";
-import TopNav from "./TopNav";
 import Header from "./Header";
 import Footer from "./Footer";
 
@@ -10,7 +9,7 @@ function MobileBottomBar() {
   };
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-[80] lg:hidden">
+    <div className="fixed inset-x-0 bottom-0 z-80 lg:hidden">
       <div className="grid h-[68px] grid-cols-3 overflow-hidden border-t border-white/10 bg-[#6f767a] shadow-[0_-8px_20px_rgba(0,0,0,0.25)]">
         <button
           type="button"
@@ -74,11 +73,11 @@ export default function Layouts() {
 
   const overlayPages = [
     "/",
-    "/venues",
-    "/wedding-services",
-    "/packages",
-    "/room-blocks",
-    "/gallery",
+    "/rooms",
+    "/restaurant",
+    "/about",
+    "/blog",
+    "/contact",
   ];
 
   const isOverlayPage = overlayPages.includes(pathname);
@@ -86,7 +85,6 @@ export default function Layouts() {
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-white">
-      <TopNav />
       <Header />
 
       <main
@@ -94,7 +92,7 @@ export default function Layouts() {
           isStartPlanningPage
             ? "pt-[132px] lg:pt-[140px]"
             : isOverlayPage
-            ? "pt-[40px] lg:pt-[40px]"
+            ? "pt-0"
             : "pt-[132px] lg:pt-[140px]"
         } ${isStartPlanningPage ? "pb-0" : "pb-[74px] lg:pb-0"}`}
       >

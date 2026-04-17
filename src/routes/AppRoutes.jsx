@@ -13,11 +13,11 @@ export default function AppRoutes() {
     <Routes>
       <Route path="/" element={<Layouts />}>
         <Route index element={<Home />} />
-        <Route path="venues" element={<Venues />} />
-        <Route path="wedding-services" element={<GroupeService />} />
-        <Route path="packages" element={<Package />} />
-        <Route path="room-blocks" element={<RoomBlock />} />
-        <Route path="gallery" element={<Garelly />} />
+        <Route path="rooms" element={<Venues />} />
+        <Route path="restaurant" element={<GroupeService />} />
+        <Route path="about" element={<Package />} />
+        <Route path="blog" element={<RoomBlock />} />
+        <Route path="contact" element={<Garelly />} />
       </Route>
     </Routes>
   );

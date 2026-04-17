@@ -1,26 +1,26 @@
-import React from "react";
-import Wellcom from "../pages/resort/Wellcom";
-import ResortSectionTwo from "./resort/ResortSectionTwo";
-import ResortBanner from "./resort/ResortBanner";
-import ResortSectionThree from "./resort/ResortSectionThree";
-import ResortSectionFour from "./resort/ResortSectionFour";
-import ResortSectionFive from "./resort/ResortSectionFive";
-import ResortSectionSix from "./resort/ResortSectionSix";
-import ResortSectionSeven from "./resort/ResortSectionSeven";
-import ResortSectionEight from "./resort/ResortSectionEight";
+import HeroSection from "../components/HeroSection";
+import BookingSection from "../components/BookingSection";
+import CategoriesSection from "../components/CategoriesSection";
+import WelcomeSection from "../components/WelcomeSection";
+import RoomsSection from "../components/RoomsSection";
+import ParallaxSection from "../components/ParallaxSection";
+import RestaurantSection from "../components/RestaurantSection";
+import TestimonialsSection from "../components/TestimonialsSection";
+import BlogSection from "../components/BlogSection";
 
-export default function Home() {
+const Index = () => {
   return (
-    <>
-      <Wellcom />
-      <ResortSectionTwo />
-      <ResortBanner />
-      <ResortSectionThree />
-      <ResortSectionFour />
-      <ResortSectionFive />
-      <ResortSectionSix />
-      <ResortSectionSeven />
-      <ResortSectionEight />
-    </>
+    <div className="overflow-x-hidden">
+      <HeroSection />
+      <BookingSection />
+      <CategoriesSection />
+      <WelcomeSection />
+      <RoomsSection />
+      <TestimonialsSection />
+      <ParallaxSection />
+      <RestaurantSection />
+    </div>
   );
-}
+};
+
+export default Index;

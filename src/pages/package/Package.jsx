@@ -1,328 +1,88 @@
-import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { Play } from "lucide-react";
+import WelcomeSection from "../../components/WelcomeSection";
+import ParallaxSection from "../../components/ParallaxSection";
+import TestimonialsSection from "../../components/TestimonialsSection";
 
-const classicPackage = [
-  "3 Buffet-Style Hors D’Oeuvres",
-  "1 Classic Salad",
-  "2 Entrées",
-  "1 Veggie",
-  "1 Starch",
-  "Fresh-Baked Bread",
-];
+import heroBg from "@/assets/images/IMG-20230508-WA0033 - Copy.jpg";
+import welcomeBg from "@/assets/images/pool3.JPG";
 
-const premiumPackage = [
-  "4 Buffet-Style Hors D’Oeuvres",
-  "1 Premium Salad",
-  "3 Entrées",
-  "2 Veggies",
-  "2 Starches",
-  "Fresh-Baked Bread",
-  "Enhanced Dessert Display",
-];
-
-const includedInEveryPackage = [
-  "Exclusive Venue Access",
-  "Reception Space",
-  "Two Wedding Party Rooms",
-  "Tables, Chairs, & Linens",
-  "Complimentary Food Tasting",
-  "Ceremony Garden",
-  "Day-Of Coordinator",
-  "Complimentary Guest Parking",
-  "On-Site Catering",
-  "Complimentary Cake Cutting",
-  "Hors D’oeuvres Patio",
-  "Dedicated Event Team",
-  "Discounted Guest Room Blocks",
-  "Customizable Menus",
-  "Hand-Poured Sparkling Cider Toast",
-];
-
-const drinkPackageInfo = [
-  "ABC License",
-  "Glassware",
-  "Unlimited Open Bar for Guests 21 and Over. Guests must drink responsibly.",
-  "1 Bartender per 125 Guests (Additional Bartenders $250)",
-  "1 Bar Setup ($400 for an additional bar setup and 1 bartender)",
-  "*Consumption or Cash Bars Available Upon Request",
-];
-
-const drinkCards = [
-  {
-    title: "SIMPLE",
-    image: "/images/bar2.jpg",
-    items: ["Beer", "Wine", "Mocktails", "Sodas, Juice"],
-  },
-  {
-    title: "TOP SHELF",
-    image: "/images/bar2.png",
-    items: [
-      "Beer",
-      "Wine",
-      "Premium Bar Selections",
-      "Mocktails",
-      "Sodas, Juice, Mixers, Garnishes",
-    ],
-  },
-  {
-    title: "HOUSE",
-    image: "/images/drink.png",
-    items: [
-      "Beer",
-      "Wine",
-      "House Liquor Selections",
-      "Mocktails",
-      "Sodas, Juice, Mixers, Garnishes",
-    ],
-  },
-  {
-    title: "CALL",
-    image: "/images/bar1.jpg",
-    items: [
-      "Beer",
-      "Wine",
-      "Classic Liquor Selections",
-      "Mocktails",
-      "Sodas, Juice, Mixers, Garnishes",
-    ],
-  },
-];
-
-function BulletList({ items, textClass = "" }) {
+const About = () => {
   return (
-    <ul className="space-y-5">
-      {items.map((item) => (
-        <li
-          key={item}
-          className={`flex items-start gap-4 text-[16px] leading-[1.8] text-[#202020] sm:text-[17px] md:text-[18px] ${textClass}`}
-        >
-          <span className="mt-[12px] h-[6px] w-[6px] shrink-0 rounded-full bg-[#8e7355]" />
-          <span>{item}</span>
-        </li>
-      ))}
-    </ul>
-  );
-}
+    <div className="overflow-x-hidden bg-background">
 
-function PackageSplitSection({
-  title,
-  items,
-  image,
-  reverse = false,
-  topBorder = false,
-}) {
-  return (
-    <section
-      className={`bg-[#f3f2ed] py-10 sm:py-14 md:py-16 lg:py-20 ${
-        topBorder ? "border-t-[10px] border-[#14363a]" : ""
-      }`}
-    >
-      <div
-        className={`mx-auto grid max-w-[1320px] grid-cols-1 items-start gap-10 px-5 sm:px-6 md:px-8 lg:gap-16 lg:px-10 ${
-          reverse ? "lg:grid-cols-[1fr_0.95fr]" : "lg:grid-cols-[0.95fr_1fr]"
-        }`}
-      >
-        <div className={`${reverse ? "order-2 lg:order-2" : "order-1"}`}>
-          <img
-            src={image}
-            alt={title}
-            className="h-[340px] w-full object-cover sm:h-[440px] md:h-[560px] lg:h-[620px]"
-          />
-        </div>
 
-        <div
-          className={`max-w-[560px] ${
-            reverse ? "order-1 lg:order-1" : "order-2"
-          }`}
-        >
-          <h2
-            className="text-[42px] font-normal leading-[0.95] text-[#173247] sm:text-[56px] md:text-[68px]"
-            style={{ fontFamily: '"Cormorant Garamond", Georgia, serif' }}
-          >
-            {title}
-          </h2>
-
-          <div className="mt-8">
-            <BulletList items={items} />
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function DrinkCard({ card }) {
-  return (
-    <div>
-      <div className="overflow-hidden bg-white">
+      <section className="relative h-[60vh] min-h-[440px] flex items-end">
         <img
-          src={card.image}
-          alt={card.title}
-          className="h-[240px] w-full object-cover sm:h-[280px] md:h-[300px] lg:h-[320px]"
-        />
-      </div>
-
-      <div className="pt-6">
-        <h3 className="text-[24px] uppercase leading-[1.2] text-[#153347] md:text-[26px]">
-          {card.title}
-        </h3>
-
-        <div className="mt-6">
-          <BulletList items={card.items} />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-export default function Package() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  return (
-    <div
-      className="w-full overflow-hidden bg-[#f3f2ed] text-[#1d1d1d]"
-      style={{ fontFamily: "Montserrat, sans-serif" }}
-    >
-      {/* HERO */}
-      <section className="relative min-h-[68vh] overflow-hidden">
-        <img
-          src="/images/package.jpg"
-          alt="Wedding packages hero"
+          src={heroBg}
+          alt="About MountainViewHotel"
           className="absolute inset-0 h-full w-full object-cover"
+          width={1920}
+          height={1080}
         />
-        <div className="absolute inset-0 bg-[rgba(18,16,14,0.35)]" />
-        <div className="absolute left-0 right-0 top-[118px] z-10 hidden border-t border-white/40 lg:block" />
-
-        <div className="relative z-20 mx-auto flex min-h-[68vh] max-w-[1600px] items-center justify-center px-5 text-center sm:px-6 md:px-8 lg:px-10">
-          <div className="pt-28 pb-16 md:pt-32 md:pb-20">
-            <h1
-              className="text-[56px] font-normal leading-[0.95] text-white sm:text-[72px] md:text-[92px] lg:text-[108px]"
-              style={{ fontFamily: '"Cormorant Garamond", Georgia, serif' }}
-            >
-              Packages
-            </h1>
-          </div>
-        </div>
-      </section>
-
-      {/* INTRO */}
-      <section className="bg-[#f3f2ed] py-16 sm:py-20 md:py-24 lg:py-28">
-        <div className="mx-auto max-w-[980px] px-5 text-center sm:px-6 md:px-8">
-          <p className="text-[17px] tracking-[0.04em] text-[#a37f58] sm:text-[19px]">
-            Wedding Packages in Luxury Garden Palace
+        <div className="absolute inset-0 bg-black/45" />
+        <button
+          type="button"
+          className="absolute right-10 md:right-20 top-1/2 -translate-y-1/2 z-10 w-20 h-20 rounded-full bg-white text-primary flex items-center justify-center hover:scale-105 transition"
+          aria-label="Play hotel video"
+        >
+          <Play className="w-6 h-6 fill-primary ml-1" />
+        </button>
+        <div className="relative z-10 container mx-auto px-6 pb-14 text-white text-center">
+          <p className="font-body text-xs tracking-[0.18em] uppercase text-white/80 mb-4">
+            <Link to="/" className="hover:text-primary transition-colors">
+              Home
+            </Link>{" "}
+            <span className="mx-1">/</span> About us
           </p>
-
-          <h2
-            className="mt-3 text-[46px] font-normal leading-[0.95] text-[#173247] sm:text-[58px] md:text-[72px]"
-            style={{ fontFamily: '"Cormorant Garamond", Georgia, serif' }}
-          >
-            Bringing It All Together
-          </h2>
-
-          <p className="mx-auto mt-6 max-w-[840px] text-[17px] leading-[1.9] text-[#222] sm:text-[18px] md:text-[19px]">
-            Once you book your date with Wonder Valley, pop the bubbly and let’s
-            celebrate! Whether you’re dreaming of an intimate wedding ceremony
-            or a grand celebration, you can trust us to turn your vision into
-            the special day you’ve always imagined with some of the best—and
-            most inclusive—wedding packages in Fresno, CA.
-          </p>
+          <h1 className="font-display text-5xl md:text-7xl leading-none">About us</h1>
         </div>
       </section>
 
-      {/* CLASSIC PACKAGE */}
-      <PackageSplitSection
-        title="The Classic Package"
-        items={classicPackage}
-        image="/images/desert2.jpg"
-        topBorder
-      />
-
-      {/* PREMIUM PACKAGE */}
-      <PackageSplitSection
-        title="The Premium Package"
-        items={premiumPackage}
-        image="/images/desert4.jpg"
-        reverse
-      />
-
-      {/* INCLUDED IN EVERY PACKAGE */}
-      <section className="bg-[#fbfbfb] py-16 sm:py-20 md:py-24 lg:py-28">
-        <div className="mx-auto max-w-[1380px] px-5 sm:px-6 md:px-8 lg:px-10">
-          <div className="flex items-center justify-center gap-6">
-            <span className="hidden h-px w-[170px] bg-[#b89a6b] md:block" />
-            <h2
-              className="text-center text-[42px] font-normal leading-[1] text-[#173247] sm:text-[56px] md:text-[68px]"
-              style={{ fontFamily: '"Cormorant Garamond", Georgia, serif' }}
-            >
-              Included In Every Package
-            </h2>
-            <span className="hidden h-px w-[170px] bg-[#b89a6b] md:block" />
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+          <div className="relative h-[440px] overflow-hidden">
+            <img
+              src={welcomeBg}
+              alt="Welcome to MountainViewHotel"
+              className="h-full w-full object-cover"
+              width={900}
+              height={700}
+            />
           </div>
-
-          <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-12">
-            {[0, 1, 2].map((col) => (
-              <ul key={col} className="space-y-5">
-                {includedInEveryPackage
-                  .slice(col * 5, col * 5 + 5)
-                  .map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-start gap-4 text-[16px] leading-[1.8] text-[#222] sm:text-[17px] md:text-[18px]"
-                    >
-                      <span className="mt-[12px] h-[6px] w-[6px] shrink-0 rounded-full bg-[#8d6f53]" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-              </ul>
-            ))}
-          </div>
-
-          <div className="mt-16 border-b border-[#b9a27e]" />
-        </div>
-      </section>
-
-      {/* DRINK PACKAGES HERO SECTION */}
-      <section className="relative overflow-hidden py-16 sm:py-20 md:py-24 lg:py-28">
-        <img
-          src="/images/drink.png"
-          alt="Drink packages"
-          className="absolute inset-0 h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 bg-white/25" />
-
-        <div className="relative z-10 mx-auto max-w-[1600px] px-5 sm:px-6 md:px-8 lg:px-10">
-          <div className="max-w-[760px] bg-[#f6f5f2] p-8 sm:p-10 md:p-12 lg:ml-[6%] lg:p-14">
-            <h2
-              className="text-[44px] font-normal leading-[0.96] text-[#173247] sm:text-[56px] md:text-[68px]"
-              style={{ fontFamily: '"Cormorant Garamond", Georgia, serif' }}
-            >
-              Drink Packages
-            </h2>
-
-            <p className="mt-6 text-[16px] leading-[1.9] text-[#222] sm:text-[17px] md:text-[18px]">
-              We offer a fully licensed bar service package with friendly and
-              professional bartenders ready to serve delicious cocktails, beer,
-              and wine throughout your event! Included:
+          <div>
+            <p className="font-body text-xs tracking-[0.26em] uppercase text-primary mb-3">
+              Welcome To Our Hotel
             </p>
-
-            <div className="mt-8">
-              <BulletList items={drinkPackageInfo} />
-            </div>
+            <h2 className="font-display text-4xl md:text-5xl text-foreground leading-tight mb-6">
+              Welcome To <span className="italic text-primary">MountainViewHotel</span> Hotel
+            </h2>
+            <p className="font-body text-muted-foreground leading-8">
+              On her way she met a copy. The copy warned the little Blind Text, that where it came
+              from it would have been rewritten a thousand times and everything that was left from
+              its origin would be the word "and" and the little Blind Text should turn around and
+              return to its own, safe country.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* DRINK CARDS */}
-      <section className="bg-[#f3f2ed] py-16 sm:py-20 md:py-24">
-        <div className="mx-auto max-w-[1380px] px-5 sm:px-6 md:px-8 lg:px-10">
-          <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-12 xl:gap-16">
-            {drinkCards.map((card) => (
-              <DrinkCard key={card.title} card={card} />
-            ))}
-          </div>
+      <WelcomeSection />
+      <ParallaxSection />
+
+      <section className="pt-24 bg-background text-center">
+        <div className="container mx-auto px-6">
+          <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-3">
+            Testimonials
+          </p>
+          <h2 className="font-display text-4xl md:text-6xl text-foreground mb-10">
+            Our Happy Guest Says
+          </h2>
         </div>
       </section>
+      <TestimonialsSection />
     </div>
   );
-}
+};
+
+export default About;
