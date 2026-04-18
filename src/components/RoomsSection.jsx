@@ -71,9 +71,9 @@ const RoomCard = ({ room }) => (
         {room.price} <span className="text-muted-foreground text-sm">per night</span>
       </p>
       <h3 className="font-display text-2xl mt-2 text-foreground">{room.name}</h3>
-      <button className="mt-4 border border-foreground px-6 py-2 font-body text-sm text-foreground hover:bg-foreground hover:text-background transition-colors flex items-center gap-2">
+      <a href="https://direct-book.com/properties/mountainviewhotelandapartment?locale=en&items[0][adults]=2&items[0][children]=0&items[0][infants]=0&currency=USD&checkInDate=2026-04-18&checkOutDate=2026-04-19&trackPage=yes" className="mt-4 border border-foreground px-6 py-2 font-body text-sm text-foreground hover:bg-foreground hover:text-background transition-colors flex items-center gap-2">
         View Room Details <ArrowRight className="w-4 h-4" />
-      </button>
+      </a>
     </div>
   </div>
 );

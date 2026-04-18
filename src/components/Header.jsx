@@ -6,12 +6,10 @@ const navLinks = [
   { label: "Home", to: "/" },
   { label: "Rooms", to: "/rooms" },
   { label: "Restaurant", to: "/restaurant" },
-  { label: "Pool", to: "/pool" },
   { label: "Massage & Spa", to: "/spa" },
-  { label: "About", to: "/about" },
+  { label: "About", to: "https://direct-book.com/properties/mountainviewhotelandapartment/about?locale=en&items[0][adults]=2&items[0][children]=0&items[0][infants]=0&currency=USD&checkInDate=2026-04-18&checkOutDate=2026-04-19&trackPage=yes" },
   { label: "Blog", to: "/blog" },
-  { label: "Career", to: "/career" },
-  { label: "Contact", to: "/contact" },
+  { label: "Contact", to: "https://direct-book.com/properties/mountainviewhotelandapartment/contact?locale=en&items[0][adults]=2&items[0][children]=0&items[0][infants]=0&currency=USD&checkInDate=2026-04-18&checkOutDate=2026-04-19&trackPage=yes" },
 ];
 
 export default function Header() {
