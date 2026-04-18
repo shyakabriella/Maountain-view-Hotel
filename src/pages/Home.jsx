@@ -6,7 +6,6 @@ import ParallaxSection from "../components/ParallaxSection";
 import RestaurantSection from "../components/RestaurantSection";
 import TestimonialsSection from "../components/TestimonialsSection";
 import PoolSection from "../components/PoolSection";
-import SpaSection from "../components/SpaSection";
 
 const Index = () => {
   return (
@@ -16,7 +15,6 @@ const Index = () => {
       <WelcomeSection />
       <RoomsSection />
       <PoolSection />
-      <SpaSection />
       <TestimonialsSection />
       <ParallaxSection />
       <RestaurantSection />

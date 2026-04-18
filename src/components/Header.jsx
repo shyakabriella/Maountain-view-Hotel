@@ -6,7 +6,6 @@ const navLinks = [
   { label: "Home", to: "/" },
   { label: "Rooms", to: "/rooms" },
   { label: "Restaurant", to: "/restaurant" },
-  { label: "Massage & Spa", to: "/spa" },
   { label: "About", to: "https://direct-book.com/properties/mountainviewhotelandapartment/about?locale=en&items[0][adults]=2&items[0][children]=0&items[0][infants]=0&currency=USD&checkInDate=2026-04-18&checkOutDate=2026-04-19&trackPage=yes" },
   { label: "Blog", to: "/blog" },
   { label: "Contact", to: "https://direct-book.com/properties/mountainviewhotelandapartment/contact?locale=en&items[0][adults]=2&items[0][children]=0&items[0][infants]=0&currency=USD&checkInDate=2026-04-18&checkOutDate=2026-04-19&trackPage=yes" },
@@ -34,7 +33,7 @@ export default function Header() {
           <img
             src={logo}
             alt="Mountain View Hotel"
-            className="h-12 w-auto object-contain"
+            className="h-22 w-auto object-contain"
           />
         </Link>
 

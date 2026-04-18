@@ -62,11 +62,11 @@ const Footer = () => {
               </li>
               <li className="flex gap-3">
                 <Phone className="w-4 h-4 text-primary flex-shrink-0 mt-1" />
-                <span>+250 788 123 456</span>
+                <span>0788912646</span>
               </li>
               <li className="flex gap-3">
                 <Mail className="w-4 h-4 text-primary flex-shrink-0 mt-1" />
-                <span>info@mountainviewrwanda.com</span>
+                <span> mountainviewapartmentsrw@gmail.com</span>
               </li>
             </ul>
           </div>
