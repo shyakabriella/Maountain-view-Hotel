@@ -182,7 +182,7 @@ const Career = () => {
                   </p>
                 </div>
                 <a
-                  href={`mailto:careers@mountainviewhotel.rw?subject=Application – ${pos.title}`}
+                  href={`mailto:mountainviewapartmentsrw@gmail.com?subject=Application – ${pos.title}`}
                   className="shrink-0 inline-block font-body text-sm uppercase tracking-widest bg-primary text-white px-7 py-3 rounded-full hover:bg-primary/90 transition-colors duration-200 text-center"
                 >
                   Apply Now
@@ -197,7 +197,7 @@ const Career = () => {
               Don't see the right role? We still want to hear from you.
             </p>
             <a
-              href="mailto:careers@mountainviewhotel.rw?subject=General Application"
+              href="mailto:mountainviewapartmentsrw@gmail.com?subject=General Application"
               className="inline-block font-body text-sm uppercase tracking-widest border border-primary text-primary px-8 py-3 rounded-full hover:bg-primary hover:text-white transition-colors duration-200"
             >
               Send a General Application
