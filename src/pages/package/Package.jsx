@@ -21,13 +21,7 @@ const About = () => {
           height={1080}
         />
         <div className="absolute inset-0 bg-black/45" />
-        <button
-          type="button"
-          className="absolute right-10 md:right-20 top-1/2 -translate-y-1/2 z-10 w-20 h-20 rounded-full bg-white text-primary flex items-center justify-center hover:scale-105 transition"
-          aria-label="Play hotel video"
-        >
-          <Play className="w-6 h-6 fill-primary ml-1" />
-        </button>
+        
         <div className="relative z-10 container mx-auto px-6 pb-14 text-white text-center">
           <p className="font-body text-xs tracking-[0.18em] uppercase text-white/80 mb-4">
             <Link to="/" className="hover:text-primary transition-colors">

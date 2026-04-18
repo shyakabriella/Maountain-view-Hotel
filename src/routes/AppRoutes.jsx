@@ -7,6 +7,10 @@ import GroupeService from "../pages/groupeservice/GroupeService";
 import Package from "../pages/package/Package";
 import RoomBlock from "../pages/RoomBlock/RoomBlock";
 import Garelly from "../pages/Garelly/Garelly";
+import Pool from "../pages/pool/Pool";
+import Career from "../pages/career/Career";
+import Services from "../pages/services/Services";
+import Spa from "../pages/spa/Spa";
 
 export default function AppRoutes() {
   return (
@@ -18,6 +22,10 @@ export default function AppRoutes() {
         <Route path="about" element={<Package />} />
         <Route path="blog" element={<RoomBlock />} />
         <Route path="contact" element={<Garelly />} />
+        <Route path="pool" element={<Pool />} />
+        <Route path="career" element={<Career />} />
+        <Route path="services" element={<Services />} />
+        <Route path="spa" element={<Spa />} />
       </Route>
     </Routes>
   );

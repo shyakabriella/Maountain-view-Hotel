@@ -1,4 +1,5 @@
 import { MapPin, Phone, Mail, ExternalLink, Play, Camera } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -11,30 +12,16 @@ const Footer = () => {
             <p className="text-sm leading-relaxed font-body">
               Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
             </p>
-            <div className="flex gap-3 mt-6">
-              {[
-                { name: "twitter", icon: ExternalLink },
-                { name: "youtube", icon: Play },
-                { name: "instagram", icon: Camera }
-              ].map(({ name, icon: Icon }) => (
-                <a
-                  key={name}
-                  href="#"
-                  className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-primary hover:border-primary transition-colors"
-                >
-                  <Icon className="w-4 h-4" />
-                </a>
-              ))}
-            </div>
+            
           </div>
 
           {/* Useful Links */}
           <div>
             <h3 className="font-display text-lg text-white mb-4">Useful Links</h3>
             <ul className="space-y-3 font-body text-sm">
-              {["Blog", "Rooms", "Amenities", "Gift Card"].map((l) => (
-                <li key={l}><a href="#" className="hover:text-primary transition-colors">{l}</a></li>
-              ))}
+              <li><Link to="/blog" className="hover:text-primary transition-colors">Blog</Link></li>
+              <li><Link to="/rooms" className="hover:text-primary transition-colors">Rooms</Link></li>
+              <li><Link to="/restaurant" className="hover:text-primary transition-colors">Restaurant</Link></li>
             </ul>
           </div>
 
@@ -42,9 +29,26 @@ const Footer = () => {
           <div>
             <h3 className="font-display text-lg text-white mb-4">Privacy</h3>
             <ul className="space-y-3 font-body text-sm">
-              {["Career", "About Us", "Contact Us", "Services"].map((l) => (
-                <li key={l}><a href="#" className="hover:text-primary transition-colors">{l}</a></li>
-              ))}
+              <li>
+                <Link to="/career" className="hover:text-primary transition-colors">
+                  Career
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="hover:text-primary transition-colors">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="hover:text-primary transition-colors">
+                  Contact Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/services" className="hover:text-primary transition-colors">
+                  Services
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -54,7 +58,7 @@ const Footer = () => {
             <ul className="space-y-4 font-body text-sm">
               <li className="flex gap-3">
                 <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-1" />
-                <span>Musanze, Northern Province, Rwanda</span>
+                <span>Kigali,Rwanda</span>
               </li>
               <li className="flex gap-3">
                 <Phone className="w-4 h-4 text-primary flex-shrink-0 mt-1" />

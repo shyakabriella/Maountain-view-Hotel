@@ -6,8 +6,11 @@ const navLinks = [
   { label: "Home", to: "/" },
   { label: "Rooms", to: "/rooms" },
   { label: "Restaurant", to: "/restaurant" },
+  { label: "Pool", to: "/pool" },
+  { label: "Massage & Spa", to: "/spa" },
   { label: "About", to: "/about" },
   { label: "Blog", to: "/blog" },
+  { label: "Career", to: "/career" },
   { label: "Contact", to: "/contact" },
 ];
 

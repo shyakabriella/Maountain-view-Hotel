@@ -2,12 +2,13 @@ import catRooms from "@/assets/images/photo_33.JPG";
 import catPool from "@/assets/images/pool3.JPG";
 import catRestaurant from "@/assets/images/resto1.JPG";
 import room1 from "@/assets/room-1.jpg";
+import { Link } from "react-router-dom";
 
 const categories = [
-  { label: "SPECIAL ROOMS", image: catRooms },
-  { label: "SWIMMING POOL", image: catPool },
-  { label: "RESTAURANT", image: catRestaurant },
-  { label: "Special Rooms", image: room1 },
+  { label: "ROOMS", image: catRooms, link: "/rooms" },
+  { label: "SWIMMING POOL", image: catPool, link: "/pool" },
+  { label: "RESTAURANT", image: catRestaurant, link: "/restaurant" },
+  { label: "Special Rooms", image: room1, link: "/rooms" },
 ];
 
 const CategoriesSection = () => {
@@ -16,7 +17,7 @@ const CategoriesSection = () => {
       <div className="container mx-auto px-6 py-16">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-0">
           {categories.map((cat, i) => (
-            <div key={i} className="relative h-64 overflow-hidden group cursor-pointer">
+            <Link key={i} to={cat.link} className="relative h-64 overflow-hidden group cursor-pointer block">
               <img
                 src={cat.image}
                 alt={cat.label}
@@ -30,7 +31,7 @@ const CategoriesSection = () => {
                   {cat.label}
                 </span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

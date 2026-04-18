@@ -75,9 +75,13 @@ export default function Layouts() {
     "/",
     "/rooms",
     "/restaurant",
+    "/pool",
     "/about",
     "/blog",
     "/contact",
+    "/career",
+    "/services",
+    "/spa",
   ];
 
   const isOverlayPage = overlayPages.includes(pathname);

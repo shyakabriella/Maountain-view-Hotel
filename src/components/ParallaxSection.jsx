@@ -1,4 +1,4 @@
-import parallaxBg from "@/assets/hero-bg.jpg";
+import parallaxBg from "@/assets/images/IMG_4378.jpg";
 
 const ParallaxSection = () => {
   return (

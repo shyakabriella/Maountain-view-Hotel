@@ -23,12 +23,7 @@ const HeroSection = () => {
           Experience Epic Beauty
         </h1>
       </div>
-      <button
-        className="absolute right-16 top-1/2 -translate-y-1/2 z-10 w-20 h-20 rounded-full flex items-center justify-center transition-transform hover:scale-110"
-        style={{ backgroundColor: "white" }}
-      >
-        <Play className="w-6 h-6 ml-1 text-primary fill-primary" />
-      </button>
+     
     </section>
   );
 };

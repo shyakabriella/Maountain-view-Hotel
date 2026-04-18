@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { MessageSquare } from "lucide-react";
 
-import heroBg from "@/assets/images/entrance.JPG";
+import heroBg from "@/assets/blog.jpg";
 import blog1 from "@/assets/images/photo_16.JPG";
 import blog2 from "@/assets/images/photo_49.JPG";
 import blog3 from "@/assets/images/photo_50.JPG";
