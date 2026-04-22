@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="container mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* BRAND (LOGO ONLY — CLEAN + MODERN) */}
-          <Link to={'/'} className="space-y-4 mt-10">
+          <Link to={"/"} className="space-y-4 mt-10">
             <img
               src={logo}
               alt="MountainViewHotel logo"
@@ -132,7 +132,7 @@ const Footer = () => {
           href="https://www.ashbhub.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-green-500 hover:text-green-400 transition-colors underline"
+          className="relative text-green-500 hover:text-green-400 transition-colors duration-300 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-green-400 after:transition-all after:duration-300 hover:after:w-full"
         >
           African Safari and Hotel Booking Hub
         </a>
