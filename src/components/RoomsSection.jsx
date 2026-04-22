@@ -1,111 +1,118 @@
-import { Star, ArrowRight } from "lucide-react";
-import welcomeBg from "@/assets/images/pool3.JPG";
-import room1 from "@/assets/images/photo_33.JPG";
-import room2 from "@/assets/images/photo_34.JPG";
-import room3 from "@/assets/images/photo_35.JPG";
-import room4 from "@/assets/images/photo_36.JPG";
+import { Star, ArrowRight } from "lucide-react"; 
+import welcomeBg from "@/assets/images/pool3.JPG"; import room1 from "@/assets/images/IMG_4411.jpg"; 
+import room2 from "@/assets/images/IMG_4378.jpg"; 
+import room3 from "@/assets/images/photo_18.JPG"; 
 
-const rooms = [
-  { name: "Suite Room", image: room1 },
-  { name: "Family Room", image: room2 },
-  { name: "Deluxe Room", image: room3 },
-  { name: "Luxury Room", image: room4 },
-  { name: "Superior Room", image: room1 },
-];
+import room4 from "@/assets/images/photo_23.JPG"; 
+import room5 from "@/assets/images/photo_92.JPG"; 
+import room6 from "@/assets/images/photo_89.JPG"; 
+import { motion } from "framer-motion"; 
+
+const rooms = [{ name: "Deluxe Double Room", image: room2 }, {
+   name: "Deluxe Twin Room", image: room1 }, { name: "Executive Suite", image: room2 }, 
+   { name: "Executive Room", image: room4 }, { name: "One Bedroom Apartment", image: room2 }, 
+   { name: "Two Bedroom Apartment", image: room1 }, 
+   { name: "Three Bedroom Apartment", image: room4 },
+  ];
 
 const RoomsSection = () => {
   return (
-    <section id="rooms" className="py-20 bg-hotel-light-gray">
-      <div className="container mx-auto px-6 text-center mb-12">
-        <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-3">
-          MOUNTAINVIEWHOTEL ROOMS
+    <section id="rooms" className="py-24 bg-hotel-light-gray">
+
+      {/* HEADER */}
+      <div className="text-center mb-16 px-6">
+        <p className="text-sm tracking-[0.3em] uppercase text-primary mb-3">
+          Our Accommodations
         </p>
-        <h2 className="font-display text-3xl md:text-5xl text-foreground">
-          Hotel Master's Rooms
+        <h2 className="text-3xl md:text-5xl text-foreground">
+          Find Your Perfect Stay
         </h2>
       </div>
 
-      {/* First row */}
-      <div className="grid grid-cols-1 lg:grid-cols-3">
-        {/* Welcome card */}
-        <div className="relative h-80 lg:h-auto overflow-hidden">
+      {/* FEATURED CARD */}
+      <div className="flex justify-center px-6 mb-16">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="relative w-full max-w-4xl h-[440px] rounded-3xl overflow-hidden group shadow-lg"
+        >
           <img
             src={welcomeBg}
-            alt="Welcome to MountainViewHotel"
-            className="w-full h-full object-cover"
-            loading="lazy"
+            alt="Welcome"
+            className="w-full h-full object-cover group-hover:scale-110 transition duration-700"
           />
-          <div className="absolute inset-0 bg-black/80 flex flex-col justify-end p-8">
-            <h3 className="font-display text-3xl text-white">
-              Welcome to{" "}
-              <span className="text-primary italic">MountainView</span> Hotel
+
+          <div className="absolute inset-0 bg-black/70 flex flex-col justify-end p-10">
+            <h3 className="text-3xl md:text-4xl text-white font-semibold">
+              Welcome to <span className="text-primary">MountainView</span>
             </h3>
-            <p className="mt-2 text-sm text-white/80">
-              A small river named Duden flows by their place and supplies it
-              with the necessary regelialia.
+
+            <p className="mt-4 text-white/80 max-w-lg leading-relaxed">
+              Experience comfort, elegance, and exceptional hospitality in every stay.
             </p>
           </div>
+        </motion.div>
+      </div>
+
+      {/* ROOMS GRID (FIRST 6 IN ORDER) */}
+      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-10 px-6">
+        {rooms.slice(0, 6).map((room, i) => (
+          <RoomCard key={i} room={room} index={i} />
+        ))}
+      </div>
+
+      {/* LAST ROOM CENTERED (7th stays in order) */}
+      <div className="flex justify-center mt-12 px-6">
+        <div className="w-full sm:w-1/2 max-w-md">
+          <RoomCard room={rooms[6]} index={6} />
         </div>
-
-        {/* First 2 rooms */}
-        {rooms.slice(0, 2).map((room, i) => (
-          <RoomCard key={i} room={room} />
-        ))}
       </div>
 
-      {/* Second row */}
-      <div className="grid grid-cols-1 lg:grid-cols-3">
-        {rooms.slice(2).map((room, i) => (
-          <RoomCard key={i} room={room} />
-        ))}
-      </div>
     </section>
   );
 };
 
-const RoomCard = ({ room }) => {
+const RoomCard = ({ room, index = 0 }) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2">
-      {/* Image */}
-      <div className="h-64 md:h-full overflow-hidden">
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.08 }}
+      whileHover={{ y: -10 }}
+      className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition duration-300"
+    >
+      {/* IMAGE */}
+      <div className="h-72 overflow-hidden">
         <img
           src={room.image}
           alt={room.name}
-          className="w-full h-full object-cover"
-          loading="lazy"
+          className="w-full h-full object-cover object-center hover:scale-110 transition duration-700"
         />
       </div>
 
-      {/* Content */}
-      <div className="flex flex-col items-center justify-center p-8 bg-background text-center">
-        {/* Stars */}
-        <div className="flex gap-1 mb-2">
+      {/* CONTENT */}
+      <div className="p-7 text-center">
+        <div className="flex justify-center gap-1 mb-2">
           {[...Array(5)].map((_, i) => (
-            <Star
-              key={i}
-              className="w-3 h-3 fill-primary text-primary"
-            />
+            <Star key={i} className="w-3 h-3 fill-primary text-primary" />
           ))}
         </div>
 
-        {/* Room name */}
-        <p className="text-primary font-body text-2xl font-light">
-          {room.name}
-        </p>
-
-        <h3 className="font-display text-2xl mt-2 text-foreground">
+        <h3 className="text-lg md:text-xl font-semibold text-foreground">
           {room.name}
         </h3>
 
-        {/* Button */}
         <a
-          href="https://direct-book.com/properties/mountainviewhotelandapartment?locale=en&items[0][adults]=2&items[0][children]=0&items[0][infants]=0&currency=USD&checkInDate=2026-04-18&checkOutDate=2026-04-19&trackPage=yes"
-          className="mt-4 border border-foreground px-6 py-2 font-body text-sm text-foreground hover:bg-foreground hover:text-background transition-all duration-300 flex items-center gap-2"
+          href="https://direct-book.com/properties/mountainviewhotelandapartment?locale=en"
+          className="mt-5 inline-flex items-center gap-2 text-sm border border-foreground px-6 py-2 rounded-full hover:bg-foreground hover:text-white transition"
         >
-          View Room Details <ArrowRight className="w-4 h-4" />
+          View Details <ArrowRight className="w-4 h-4" />
         </a>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

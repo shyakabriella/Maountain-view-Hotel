@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Star, Quote } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const testimonials = [
   {
@@ -23,16 +24,28 @@ const TestimonialsSection = () => {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="py-24 bg-background">
+    <motion.section
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+      className="py-24 bg-background"
+    >
       <div className="container mx-auto px-6 max-w-3xl text-center">
-        <div className="flex justify-center mb-6">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="flex justify-center mb-6"
+        >
           <div className="relative w-20 h-20 rounded-full bg-muted flex items-center justify-center">
             <div className="w-16 h-16 rounded-full bg-muted-foreground/20" />
             <div className="absolute -bottom-1 -right-1 w-8 h-8 rounded-full bg-primary flex items-center justify-center">
               <Quote className="w-4 h-4 text-primary-foreground" />
             </div>
           </div>
-        </div>
+        </motion.div>
 
         <div className="flex justify-center gap-1 mb-6">
           {[...Array(5)].map((_, i) => (
@@ -40,20 +53,45 @@ const TestimonialsSection = () => {
           ))}
         </div>
 
-        <p className="font-display text-lg italic text-muted-foreground leading-relaxed mb-8">
-          {testimonials[active].text}
-        </p>
+        <AnimatePresence mode="wait">
+          <motion.p
+            key={active}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5 }}
+            className="font-display text-lg italic text-muted-foreground leading-relaxed mb-8"
+          >
+            {testimonials[active].text}
+          </motion.p>
+        </AnimatePresence>
 
-        <h4 className="font-display text-xl text-foreground">{testimonials[active].name}</h4>
-        <p className="font-body text-xs tracking-[0.2em] text-muted-foreground mt-1 uppercase">
+        <motion.h4
+          key={`name-${active}`}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.4 }}
+          className="font-display text-xl text-foreground"
+        >
+          {testimonials[active].name}
+        </motion.h4>
+        <motion.p
+          key={`role-${active}`}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.4, delay: 0.1 }}
+          className="font-body text-xs tracking-[0.2em] text-muted-foreground mt-1 uppercase"
+        >
           {testimonials[active].role}
-        </p>
+        </motion.p>
 
         <div className="flex justify-center gap-2 mt-8">
           {testimonials.map((_, i) => (
-            <button
+            <motion.button
               key={i}
               onClick={() => setActive(i)}
+              whileHover={{ scale: 1.3 }}
+              whileTap={{ scale: 0.9 }}
               className={`w-2.5 h-2.5 rounded-full transition-colors ${
                 i === active ? "bg-primary" : "bg-muted-foreground/30"
               }`}
@@ -61,7 +99,7 @@ const TestimonialsSection = () => {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

@@ -84,7 +84,7 @@ const Services = () => {
             Every Detail, Thoughtfully Crafted
           </h2>
           <p className="font-body text-base leading-relaxed text-muted-foreground">
-            At Mountain View Hotel, our services are designed to exceed expectations at
+            At Mountain View Hotel&Apartment, our services are designed to exceed expectations at
             every turn. Whether you are here for business, leisure, or a special
             celebration, we offer a comprehensive range of amenities and experiences to
             ensure your stay is truly unforgettable.
@@ -125,7 +125,7 @@ const Services = () => {
             on making memories.
           </p>
           <Link
-            to="/contact"
+            to="https://direct-book.com/properties/mountainviewhotelandapartment/contact?locale=en&items[0][adults]=2&items[0][children]=0&items[0][infants]=0&currency=USD&checkInDate=2026-04-22&checkOutDate=2026-04-23&trackPage=yes"
             className="inline-block font-body text-sm uppercase tracking-widest bg-primary text-white px-10 py-4 rounded-full hover:bg-primary/90 transition-colors duration-200"
           >
             Get in Touch

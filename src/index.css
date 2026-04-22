@@ -16,10 +16,10 @@
   --color-popover: #ffffff;
   --color-popover-foreground: #000000;
 
-  --color-primary: #b69100;
+  --color-primary: #2E7D32;
   --color-primary-foreground: #ffffff;
 
-  --color-accent: #b69100;
+  --color-accent: #2E7D32;
   --color-accent-foreground: #ffffff;
 
   --color-muted: #fafafa;
@@ -27,7 +27,7 @@
 
   --color-border: #e6e6e6;
   --color-input: #e6e6e6;
-  --color-ring: #b69100;
+  --color-ring: #2E7D32;
 
   --color-hotel-dark: #222222;
   --color-hotel-light-gray: #f8f9fa;

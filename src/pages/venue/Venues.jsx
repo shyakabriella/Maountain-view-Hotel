@@ -3,24 +3,39 @@ import heroBg from "@/assets/hero-bg.jpg";
 
 const Rooms = () => {
   return (
-    <div className="overflow-x-hidden bg-background">
+    <div className="overflow-x-hidden overflow-y-hidden bg-background">
 
-      <section className="relative h-[58vh] min-h-[420px] flex items-end">
+      {/* CENTERED HERO */}
+      <section className="relative h-[94vh] min-h-[420px] flex items-center">
         <img
           src={heroBg}
           alt="MountainViewHotel rooms"
           className="absolute inset-0 h-full w-full object-cover"
-          width={1920}
-          height={1080}
         />
-        <div className="absolute inset-0 bg-black/45" />
-        <div className="relative z-10 container mx-auto px-6 pb-14 text-white">
-          <p className="font-body text-xs tracking-[0.24em] uppercase text-white/80 mb-3">
-            MountainViewHotel Rooms
+        <div className="absolute inset-0 bg-black/70" />
+
+        {/* LEFT SIDE CONTENT */}
+        <div className="relative z-10 ml-20 max-w-2xl text-white space-y-5">
+          
+          {/* Small Label */}
+          <p className="text-xs tracking-[0.3em] uppercase text-white/70">
+            Stay With Us
           </p>
-          <h1 className="font-display text-5xl md:text-7xl leading-none">Rooms</h1>
+
+          {/* Main Title */}
+          <h1 className="text-3xl md:text-5xl leading-[1.2]">
+            Elegant & Comfortable Rooms
+          </h1>
+
+          {/* Description */}
+          <p className="text-sm md:text-base text-white/85 leading-relaxed max-w-xl">
+            Discover thoughtfully designed rooms that blend comfort, style, and modern convenience—
+            offering the perfect space to relax, recharge, and enjoy every moment of your stay.
+          </p>
+
         </div>
       </section>
+
       <RoomsSection />
       
     </div>

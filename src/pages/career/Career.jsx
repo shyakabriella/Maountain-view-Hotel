@@ -107,7 +107,7 @@ const Career = () => {
             Be Part of Something Extraordinary
           </h2>
           <p className="font-body text-base leading-relaxed text-muted-foreground">
-            At Mountain View Hotel we believe that exceptional hospitality starts with
+            At Mountain View Hotel&Appartment we believe that exceptional hospitality starts with
             exceptional people. We are always searching for warm, driven individuals who
             share our commitment to creating unforgettable guest experiences in the heart
             of Rwanda. If you are passionate about service, eager to grow and ready to
