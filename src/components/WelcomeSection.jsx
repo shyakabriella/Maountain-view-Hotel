@@ -11,7 +11,7 @@ const services = [
 
 const WelcomeSection = () => {
   return (
-    <section className="py-20 bg-background">
+    <section className="py-5 bg-background">
       <div className="container mx-auto px-6 text-center">
         <motion.p
           initial={{ opacity: 0, y: 30 }}
@@ -26,12 +26,12 @@ const WelcomeSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className=" text-3xl md:text-5xl text-foreground mb-16"
+          className=" text-2xl md:text-3xl text-foreground mb-8"
         >
           A New Vision of Luxury Hotel
         </motion.h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-0">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-2">
           {services.map((s, i) => (
             <motion.div
               key={i}
@@ -40,12 +40,12 @@ const WelcomeSection = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.6 }}
               whileHover={{ y: -5, scale: 1.05 }}
-              className={`flex flex-col items-center gap-4 py-10 px-4 border border-border transition-colors group ${
+              className={`flex flex-col rounded-sm items-center gap-4 py-8 px-4 border border-border transition-colors group ${
                 i === 1 ? "" : ""
               }`}
             >
-              <s.icon className={`w-10 h-10 ${i === 1 ? "text-primary" : "text-primary group-hover:text-primary"}`} strokeWidth={1} />
-              <span className={` text-lg ${i === 1 ? "" : "text-foreground"}`}>
+              <s.icon className={`w-7 h-7 ${i === 1 ? "text-primary" : "text-primary group-hover:text-primary"}`} strokeWidth={1} />
+              <span className={` text-sm ${i === 1 ? "" : "text-foreground"}`}>
                 {s.label}
               </span>
             </motion.div>

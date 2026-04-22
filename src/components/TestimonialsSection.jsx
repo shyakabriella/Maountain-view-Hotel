@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Star, Quote } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -23,15 +23,26 @@ const testimonials = [
 const TestimonialsSection = () => {
   const [active, setActive] = useState(0);
 
+  // 🔥 auto switch every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActive((prev) => (prev + 1) % testimonials.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
-      className="py-24 bg-background"
+      className="mb-6 bg-background"
     >
       <div className="container mx-auto px-6 max-w-3xl text-center">
+
+        {/* Avatar / Quote Icon */}
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -47,44 +58,47 @@ const TestimonialsSection = () => {
           </div>
         </motion.div>
 
+        {/* Stars */}
         <div className="flex justify-center gap-1 mb-6">
           {[...Array(5)].map((_, i) => (
             <Star key={i} className="w-4 h-4 fill-primary text-primary" />
           ))}
         </div>
 
+        {/* Testimonial Text */}
         <AnimatePresence mode="wait">
           <motion.p
             key={active}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0, y: 30, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -30, scale: 0.98 }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
             className="font-display text-lg italic text-muted-foreground leading-relaxed mb-8"
           >
             {testimonials[active].text}
           </motion.p>
         </AnimatePresence>
 
-        <motion.h4
-          key={`name-${active}`}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.4 }}
-          className="font-display text-xl text-foreground"
-        >
-          {testimonials[active].name}
-        </motion.h4>
-        <motion.p
-          key={`role-${active}`}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.4, delay: 0.1 }}
-          className="font-body text-xs tracking-[0.2em] text-muted-foreground mt-1 uppercase"
-        >
-          {testimonials[active].role}
-        </motion.p>
+        {/* Name + Role */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={`person-${active}`}
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -15 }}
+            transition={{ duration: 0.5 }}
+          >
+            <h4 className="font-display text-xl text-foreground">
+              {testimonials[active].name}
+            </h4>
 
+            <p className="font-body text-xs tracking-[0.2em] text-muted-foreground mt-1 uppercase">
+              {testimonials[active].role}
+            </p>
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Dots */}
         <div className="flex justify-center gap-2 mt-8">
           {testimonials.map((_, i) => (
             <motion.button

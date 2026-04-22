@@ -12,6 +12,7 @@ import Career from "../pages/career/Career";
 import Services from "../pages/services/Services";
 import Spa from "../pages/spa/Spa";
 import StunningCityMountainView from "../pages/stunning-city-mountain-view/StunningCityMountainView";
+import Conference from "@/pages/conference/Conference";
 
 export default function AppRoutes() {
   return (
@@ -27,6 +28,7 @@ export default function AppRoutes() {
         <Route path="career" element={<Career />} />
         <Route path="services" element={<Services />} />
         <Route path="spa" element={<Spa />} />
+        <Route path="conference" element={<Conference />} />
         <Route
           path="stunning-city-mountain-view"
           element={<StunningCityMountainView />}

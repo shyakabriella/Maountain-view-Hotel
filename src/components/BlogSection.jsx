@@ -13,7 +13,7 @@ const BlogSection = () => {
   return (
     <section id="blog" className="py-20 bg-background">
       <div className="container mx-auto px-6 text-center mb-12">
-        <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-3">READ BLOG</p>
+        <p className="text-xs tracking-[0.3em] uppercase text-primary mb-3">READ BLOG</p>
         <h2 className="font-display text-3xl md:text-5xl text-foreground">Recent Blog</h2>
       </div>
 

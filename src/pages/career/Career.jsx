@@ -77,7 +77,7 @@ const Career = () => {
     <div className="overflow-x-hidden bg-background">
 
       {/* ── Hero ── */}
-      <section className="relative h-[58vh] min-h-[420px] flex items-end">
+      <section className="relative h-[98vh] min-h-[420px] flex items-end">
         <img
           src={heroBg}
           alt="Mountain View Hotel career"
@@ -93,7 +93,7 @@ const Career = () => {
             </Link>{" "}
             <span className="mx-1">/</span> Career
           </p>
-          <h1 className="font-display text-5xl md:text-7xl leading-none">Career</h1>
+          <h1 className="font-display text-3xl md:text-5xl leading-none">Career</h1>
         </div>
       </section>
 
@@ -103,15 +103,11 @@ const Career = () => {
           <p className="font-body text-xs tracking-[0.2em] uppercase text-primary mb-4">
             Join Our Team
           </p>
-          <h2 className="font-display text-4xl md:text-5xl text-foreground mb-6">
+          <h2 className="font-display text-3xl md:text-4xl text-foreground mb-6">
             Be Part of Something Extraordinary
           </h2>
           <p className="font-body text-base leading-relaxed text-muted-foreground">
-            At Mountain View Hotel&Appartment we believe that exceptional hospitality starts with
-            exceptional people. We are always searching for warm, driven individuals who
-            share our commitment to creating unforgettable guest experiences in the heart
-            of Rwanda. If you are passionate about service, eager to grow and ready to
-            make a difference — we would love to hear from you.
+            At Mountain View Hotel & Apartment, we believe great hospitality begins with great people. We seek warm, driven individuals passionate about service and creating unforgettable guest experiences in Rwanda. If you’re eager to grow and make a difference, we’d love to hear from you.
           </p>
         </div>
       </section>
@@ -183,7 +179,7 @@ const Career = () => {
                 </div>
                 <a
                   href={`mailto:mountainviewapartmentsrw@gmail.com?subject=Application – ${pos.title}`}
-                  className="shrink-0 inline-block font-body text-sm uppercase tracking-widest bg-primary text-white px-7 py-3 rounded-full hover:bg-primary/90 transition-colors duration-200 text-center"
+                  className="shrink-0 inline-block font-body text-sm uppercase tracking-widest bg-primary text-white px-7 py-3 rounded-xl hover:bg-primary/90 transition-colors duration-200 text-center"
                 >
                   Apply Now
                 </a>

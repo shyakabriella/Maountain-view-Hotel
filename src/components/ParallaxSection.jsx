@@ -15,9 +15,10 @@ const ParallaxSection = () => {
         transition={{ duration: 1.2 }}
         className="relative z-10 container mx-auto px-6"
       >
-        <h2 className="font-display text-5xl md:text-7xl lg:text-8xl leading-tight max-w-3xl" style={{ color: "white" }}>
+        <h2 className="font-display text-2xl md:text-3xl lg:text-4xl leading-tight max-w-3xl" style={{ color: "white" }}>
           We're Most Recommended Hotel
         </h2>
+        <hr className="max-w-[43%] mt-2 border-t-3 border-primary" />
       </motion.div>
     </section>
   );

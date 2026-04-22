@@ -8,6 +8,7 @@ const navLinks = [
   { label: "Rooms", to: "/rooms" },
   { label: "Services", to: "/services" },
   { label: "Restaurant", to: "/restaurant" },
+  { label: "Conference", to: "/conference" },
   { label: "About", to: "https://direct-book.com/properties/mountainviewhotelandapartment/about?locale=en&items[0][adults]=2&items[0][children]=0&items[0][infants]=0&currency=USD&checkInDate=2026-04-18&checkOutDate=2026-04-19&trackPage=yes" },
   { label: "Contact", to: "https://direct-book.com/properties/mountainviewhotelandapartment/contact?locale=en&items[0][adults]=2&items[0][children]=0&items[0][infants]=0&currency=USD&checkInDate=2026-04-18&checkOutDate=2026-04-19&trackPage=yes" },
 ];
@@ -28,7 +29,7 @@ export default function Header() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 w-full z-60 transition-all duration-300 shadow-md py-3 ${
+      className={`fixed top-0 left-0 w-full z-60 transition-all duration-300 shadow-md py-7 ${
         scrolled ? "bg-[#d8d3c2f8]" : "bg-white"
       }`}
     >

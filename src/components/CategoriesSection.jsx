@@ -16,7 +16,7 @@ const CategoriesSection = () => {
   return (
     <section className="py-0">
       <div className="container mx-auto px-6 py-16">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-0">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-1">
           {categories.map((cat, i) => (
             <motion.div
               key={i}
@@ -25,7 +25,7 @@ const CategoriesSection = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.15, duration: 0.6 }}
               whileHover={{ scale: cat.highlight ? 1.08 : 1.05 }}
-              className={`relative h-64 overflow-hidden group cursor-pointer ${
+              className={`relative rounded-sm h-64 overflow-hidden group cursor-pointer ${
                 cat.highlight
                   ? "ring-4 ring-[#2E7D32] ring-offset-4 ring-offset-white shadow-2xl shadow-[#2E7D32]/30"
                   : ""

@@ -137,7 +137,7 @@ const MenuItem = ({ item }) => (
     <div className="flex items-start justify-between gap-4">
       <div className="flex-1">
         <h4
-          className="text-[20px] font-medium text-[#183247] transition-colors group-hover:text-[#2E7D32]"
+          className="text-[15px] font-medium text-[#183247] transition-colors group-hover:text-[#2E7D32]"
           style={{ fontFamily: '"Cormorant Garamond", Georgia, serif' }}
         >
           {item.name}
@@ -163,7 +163,7 @@ const RestaurantSection = () => {
   const rightColumn = currentItems.slice(midpoint);
 
   return (
-    <section className="bg-[#f3f2ed] py-16 sm:py-20 md:py-24">
+    <section className="bg-[#f3f2ed] relative overflow-hidden min-h-[100vh] py-12 sm:py-15 md:py-20">
       <div className="mx-auto max-w-[1380px] px-5 sm:px-6 md:px-8 lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -173,7 +173,7 @@ const RestaurantSection = () => {
           className="text-center"
         >
           <h2
-            className="text-[48px] font-normal leading-[1] text-[#183247] sm:text-[60px] md:text-[72px]"
+            className="text-[30px] font-normal leading-[1] text-[#183247] sm:text-[40px] md:text-[50px]"
             style={{ fontFamily: '"Cormorant Garamond", Georgia, serif' }}
           >
             Menu
@@ -192,7 +192,7 @@ const RestaurantSection = () => {
               key={tab}
               type="button"
               onClick={() => setActiveTab(tab)}
-              className={`relative text-[18px] transition md:text-[20px] ${
+              className={`relative text-[10px] transition md:text-[12px] ${
                 activeTab === tab
                   ? "text-[#111111]"
                   : "text-[#8a8a8a] hover:text-[#183247]"
@@ -221,7 +221,7 @@ const RestaurantSection = () => {
             className="mt-14"
           >
             <h3
-              className="text-[42px] font-normal leading-[1] text-[#183247] sm:text-[54px] md:text-[64px]"
+              className="text-[20px] font-normal leading-[1] text-[#183247] sm:text-[30px] md:text-[40px]"
               style={{ fontFamily: '"Cormorant Garamond", Georgia, serif' }}
             >
               {activeTab}

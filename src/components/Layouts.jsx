@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import Header from "./Header";
 import Footer from "./Footer";
+import ScrollToTop from "./ScrollToTop";
 
 function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +13,8 @@ function MobileMenu() {
   useEffect(() => {
     const handleOpenMenu = () => setIsOpen(true);
     window.addEventListener("open-wedding-mobile-menu", handleOpenMenu);
-    return () => window.removeEventListener("open-wedding-mobile-menu", handleOpenMenu);
+    return () =>
+      window.removeEventListener("open-wedding-mobile-menu", handleOpenMenu);
   }, []);
 
   // Close menu when route changes
@@ -24,15 +26,23 @@ function MobileMenu() {
     { label: "Home", to: "/" },
     { label: "Rooms", to: "/rooms" },
     { label: "Restaurant", to: "/restaurant" },
+    { label: "Conference", to: "/conference" },
     { label: "Pool", to: "/pool" },
-    { label: "About", to: "https://direct-book.com/properties/mountainviewhotelandapartment/about?locale=en&items[0][adults]=2&items[0][children]=0&items[0][infants]=0&currency=USD&checkInDate=2026-04-18&checkOutDate=2026-04-19&trackPage=yes" },
-    { label: "Contact", to: "https://direct-book.com/properties/mountainviewhotelandapartment/contact?locale=en&items[0][adults]=2&items[0][children]=0&items[0][infants]=0&currency=USD&checkInDate=2026-04-18&checkOutDate=2026-04-19&trackPage=yes" },
+    {
+      label: "About",
+      to: "https://direct-book.com/properties/mountainviewhotelandapartment/about?locale=en&items[0][adults]=2&items[0][children]=0&items[0][infants]=0&currency=USD&checkInDate=2026-04-18&checkOutDate=2026-04-19&trackPage=yes",
+    },
+    {
+      label: "Contact",
+      to: "https://direct-book.com/properties/mountainviewhotelandapartment/contact?locale=en&items[0][adults]=2&items[0][children]=0&items[0][infants]=0&currency=USD&checkInDate=2026-04-18&checkOutDate=2026-04-19&trackPage=yes",
+    },
     { label: "Services", to: "/services" },
     { label: "Career", to: "/career" },
   ];
 
   return (
     <AnimatePresence>
+      <ScrollToTop />
       {isOpen && (
         <>
           {/* Overlay */}
@@ -91,8 +101,18 @@ function MobileMenu() {
                 href="tel:+250780443787"
                 className="flex items-center justify-center gap-2 w-full bg-primary text-white py-3 rounded-lg font-body text-sm uppercase tracking-wider hover:bg-primary/90 transition-colors"
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  />
                 </svg>
                 Call Us
               </a>
@@ -199,8 +219,8 @@ export default function Layouts() {
           isStartPlanningPage
             ? "pt-[132px] lg:pt-[140px]"
             : isOverlayPage
-            ? "pt-0"
-            : "pt-[132px] lg:pt-[140px]"
+              ? "pt-0"
+              : "pt-[132px] lg:pt-[140px]"
         } ${isStartPlanningPage ? "pb-0" : "pb-[74px] lg:pb-0"}`}
       >
         <Outlet />

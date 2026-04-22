@@ -23,7 +23,7 @@ const Blog = () => {
     <div className="overflow-x-hidden bg-background">
 
 
-      <section className="relative h-[58vh] min-h-[420px] flex items-end">
+      <section className="relative h-[98vh] min-h-[420px] flex items-end">
         <img
           src={heroBg}
           alt="MountainViewHotel blog"
@@ -39,20 +39,20 @@ const Blog = () => {
             </Link>{" "}
             <span className="mx-1">/</span> Blog
           </p>
-          <h1 className="font-display text-5xl md:text-7xl leading-none">Blog</h1>
+          <h1 className="font-display text-3xl md:text-5xl leading-none">Blog</h1>
         </div>
       </section>
 
       <section className="py-24 bg-background">
         <div className="container mx-auto px-6 text-center mb-14">
           <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-2">Read Blog</p>
-          <h2 className="font-display text-[42px] md:text-[52px] text-foreground leading-tight">Recent Blog</h2>
+          <h2 className="font-display text-[35px] md:text-[45px] text-foreground leading-tight">Recent Blog</h2>
         </div>
 
         <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
           {posts.map((post, i) => (
             <article key={`${post.image}-${i}`} className="group cursor-pointer">
-              <div className="overflow-hidden h-[340px]">
+              <div className="overflow-hidden rounded-md h-[340px]">
                 <img
                   src={post.image}
                   alt="Blog post"
@@ -70,7 +70,7 @@ const Blog = () => {
                     <MessageSquare className="w-3 h-3" /> {post.comments}
                   </span>
                 </div>
-                <h3 className="font-display text-[27px] text-foreground leading-[1.35]">
+                <h3 className="font-display text-[22px] text-foreground leading-[1.35]">
                   {post.title}
                 </h3>
                 

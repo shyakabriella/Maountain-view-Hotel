@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 
 const Restaurant = () => {
   return (
-    <div className="overflow-x-hidden bg-background">
+    <div className="overflow-hidden bg-background">
 
-      <section className="relative h-[58vh] min-h-[420px] flex items-end">
+      <section className="relative h-[98vh] min-h-[420px] flex items-end">
         <img
           src={heroBg}
           alt="MountainViewHotel restaurant"
@@ -23,7 +23,7 @@ const Restaurant = () => {
             </Link>{" "}
             <span className="mx-1">/</span> Restaurant
           </p>
-          <h1 className="font-display text-5xl md:text-7xl leading-none">Restaurant</h1>
+          <h1 className="font-display text-3xl md:text-5xl leading-none">Restaurant</h1>
         </div>
       </section>
 

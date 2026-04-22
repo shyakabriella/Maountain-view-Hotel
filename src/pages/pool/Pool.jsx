@@ -11,7 +11,7 @@ const Pool = () => {
   return (
     <div className="overflow-x-hidden bg-background">
       {/* Hero Section */}
-      <section className="relative h-[58vh] min-h-[420px] flex items-end">
+      <section className="relative h-[98vh] min-h-[420px] flex items-center justify-center">
         <img
           src={heroBg}
           alt="Mountain View Hotel Pool"
@@ -20,11 +20,13 @@ const Pool = () => {
           height={1080}
         />
         <div className="absolute inset-0 bg-black/45" />
-        <div className="relative z-10 container mx-auto px-6 pb-14 text-white">
+        <div className="relative z-10 container px-6 mt-20 text-center text-white flex flex-col items-center justify-center">
           <p className="font-body text-xs tracking-[0.24em] uppercase text-white/80 mb-3">
             Relax & Rejuvenate
           </p>
-          <h1 className="font-display text-5xl md:text-7xl leading-none">Swimming Pool</h1>
+          <h1 className="font-display text-2xl md:text-4xl leading-none">
+            Swimming Pool
+          </h1>
         </div>
       </section>
 
