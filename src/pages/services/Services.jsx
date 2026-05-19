@@ -2,7 +2,7 @@ import heroBg from "@/assets/images/196C4897.JPG";
 import pool from "@/assets/images/pool3.JPG";
 import accomodation from "@/assets/images/IMG_4378.jpg";
 import bar from "@/assets/images/bar3.JPG";
-import Resto from "@/assets/images/IMG_4545.JPG";
+import Resto from "@/assets/images/IMG_4545.jpg";
 import { Link } from "react-router-dom";
 
 const services = [
